@@ -1,0 +1,13 @@
+<main>
+  <section class="professional-experience">
+    <h3 class="section-title">Professional Experience</h3>
+    <app-experience-item
+      *ngFor="let experience of experiences"
+      [jobTitle]="experience.jobTitle"
+      [company]="experience.company"
+      [dates]="experience.dates"
+      [technologies]="experience.technologies"
+      [responsibilities]="experience.responsibilities">
+    </app-experience-item>
+  </section>
+</main>

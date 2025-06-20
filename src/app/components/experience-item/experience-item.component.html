@@ -1,0 +1,12 @@
+<div class="experience-item">
+  <div class="job-header">
+    <span class="job-title-company">{{ jobTitle }} <span class="job-company">– {{ company }}</span></span>
+    <span class="job-dates">({{ dates }})</span>
+  </div>
+  <div class="technologies">
+    <span *ngFor="let tech of technologies" class="tech-tag">{{ tech }}</span>
+  </div>
+  <ul class="responsibilities">
+    <li *ngFor="let responsibility of responsibilities">{{ responsibility }}</li>
+  </ul>
+</div>

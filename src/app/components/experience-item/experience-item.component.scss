@@ -1,0 +1,64 @@
+h3.section-title {
+  font-size: 1.8em;
+  color: #2c3e50; /* O un gris oscuro */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #3498db; /* Una línea sutil con color de acento */
+  display: inline-block; /* Para que la línea se ajuste al texto */
+}
+
+.experience-item {
+  margin-bottom: 30px; /* Espacio entre cada experiencia */
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #cccccc; /* Un divisor sutil */
+}
+.experience-item:last-child {
+  border-bottom: none; /* No para el último elemento */
+}
+.job-header {
+  display: flex;
+  justify-content: space-between; /* Alinear título/empresa a la izquierda, fechas a la derecha */
+  align-items: baseline;
+  flex-wrap: wrap; /* Para que se adapte a pantallas pequeñas */
+}
+.job-title-company {
+  font-size: 1.25em;
+  font-weight: 600; /* Negrita */
+  color: #2c3e50;
+}
+.job-company {
+  font-weight: 400;
+  color: #34495e; /* Un gris un poco más suave */
+}
+.job-dates {
+  font-size: 0.95em;
+  color: #7f8c8d; /* Gris más claro */
+  white-space: nowrap; /* Para que las fechas no se rompan */
+}
+.technologies {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #555; /* Un gris medio */
+  font-size: 0.9em;
+  font-style: italic; /* Opcional, para diferenciarlas */
+}
+/* Para tags/badges de tecnologías */
+.tech-tag {
+  display: inline-block;
+  background-color: #e0f2f7; /* Fondo suave */
+  color: #2980b9; /* Color de texto azul */
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 0.85em;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.responsibilities ul {
+  list-style: disc; /* El estilo por defecto */
+  margin-left: 20px;
+  padding: 0;
+  line-height: 1.6; /* Mejora la legibilidad */
+}
+.responsibilities li {
+  margin-bottom: 8px;
+}
