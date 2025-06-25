@@ -1,0 +1,31 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+}
+.modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(128, 128, 128, 0.7); /* Grey with 70% opacity */
+  color: #fff;
+  padding: 0rem;
+  border-radius: 15px;                  /* More pronounced rounded corners */
+  z-index: 1001;
+  min-width: 300px;
+  min-height: 200px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}

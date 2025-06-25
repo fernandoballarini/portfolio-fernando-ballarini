@@ -1,0 +1,5 @@
+<div class="modal-backdrop" *ngIf="show" @fadeInOut (click)="onClose()"></div>
+<div class="modal" *ngIf="show" @fadeInOut>
+  <button class="close-btn" (click)="onClose()">×</button>
+  <ng-content></ng-content>
+</div>

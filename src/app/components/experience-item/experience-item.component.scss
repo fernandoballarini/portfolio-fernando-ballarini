@@ -24,32 +24,32 @@ h3.section-title {
 .job-title-company {
   font-size: 1.25em;
   font-weight: 600; /* Negrita */
-  color: #2c3e50;
+  color: #87bff7;
 }
 .job-company {
   font-weight: 400;
-  color: #34495e; /* Un gris un poco más suave */
+  color: #87bdf3; /* Un gris un poco más suave */
 }
 .job-dates {
   font-size: 0.95em;
-  color: #7f8c8d; /* Gris más claro */
+  color: #4b96f8; /* Gris más claro */
   white-space: nowrap; /* Para que las fechas no se rompan */
 }
 .technologies {
   margin-top: 5px;
   margin-bottom: 10px;
   color: #555; /* Un gris medio */
-  font-size: 0.9em;
+  font-size: 1.1em;
   font-style: italic; /* Opcional, para diferenciarlas */
 }
 /* Para tags/badges de tecnologías */
 .tech-tag {
   display: inline-block;
-  background-color: #e0f2f7; /* Fondo suave */
-  color: #2980b9; /* Color de texto azul */
+  background-color: #015b74; /* Fondo suave */
+  color: #b9dbf1; /* Color de texto azul */
   padding: 3px 8px;
   border-radius: 3px;
-  font-size: 0.85em;
+  font-size: 1rem;
   margin-right: 5px;
   margin-bottom: 5px;
 }

@@ -1,0 +1,23 @@
+
+.button-like-div {
+  border: 2px solid transparent;
+  border-radius: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  width: 150px;
+  height: 75px;
+}
+
+.button-like-div:hover {
+  border-color: hsl(0, 0%, 88%);
+  width: 150px;
+  height: 75px;
+  box-shadow: 0 0 12px 2px hsl(0, 0%, 88%), 0 0 24px 4px #00f0ff66;
+  transform: translateY(-2px) scale(1.03);
+  cursor: pointer;
+}

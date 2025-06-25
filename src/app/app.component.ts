@@ -5,19 +5,45 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { SkillsComponent } from './components/skills/skills.component';
 import { EducationComponent } from './components/education/education.component';
 import { CommonModule } from '@angular/common';
+import { ModalComponent } from './components/common/modal/modal.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, ExperienceComponent, SkillsComponent, EducationComponent, CommonModule],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    ExperienceComponent,
+    SkillsComponent,
+    EducationComponent,
+    CommonModule,
+    ModalComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
+
 export class AppComponent {
   title = 'portfolio-fernando-ballarini';
   activeSection: string = ''; // Tracks the currently active section
+  showExperienceModal = false;
+  showSkillsModal = false;
+  showEducationModal = false;
+  showLanguagesModal = false;
 
-  showSection(section: string): void {
-    this.activeSection = section; // Updates the active section
-    console.log(`Active section changed to: ${section}`);
+  onSectionChange(section: string) {
+    switch (section) {
+      case 'experience':
+        this.showExperienceModal = true;
+        break;
+      case 'skills':
+        this.showSkillsModal = true;
+        break;
+      case 'education':
+        this.showEducationModal = true;
+        break;
+      case 'languages':
+        this.showLanguagesModal = true;
+        break;
+    }
   }
 }
