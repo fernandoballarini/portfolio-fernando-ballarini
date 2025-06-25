@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/',
+  basePath: '/portfolio-fernando-ballarini',
   supportedLocales: {
   "en-US": ""
 },
