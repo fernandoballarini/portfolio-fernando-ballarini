@@ -22,17 +22,24 @@ export class HeaderComponent {
   private wordChangeInterval: any;
 
   ngOnInit() {
-    this.startScramble();
-    this.wordChangeInterval = setInterval(() => {
+    this.displayedText = this.words[0]; // Show first word for SSR
+    if (typeof window !== 'undefined') {
+      // Safe to use window, document, localStorage, etc.
+      console.log(window.location.href);
+      this.startScramble();
+      this.wordChangeInterval = setInterval(() => {
       this.currentWordIndex = (this.currentWordIndex + 1) % this.words.length;
       this.finalText = this.words[this.currentWordIndex];
       this.startScramble();
-    }, 5000); // Change word every 5 seconds
+    }, 5000);
+    }
   }
 
   ngOnDestroy() {
-    clearInterval(this.scrambleInterval);
-    clearInterval(this.wordChangeInterval);
+    if (typeof window !== 'undefined') {
+      clearInterval(this.scrambleInterval);
+      clearInterval(this.wordChangeInterval);
+    }
   }
 
   onSectionClick(section: string) {

@@ -20,6 +20,7 @@ import { ModalComponent } from './components/common/modal/modal.component';
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  standalone: true
 })
 
 export class AppComponent {
