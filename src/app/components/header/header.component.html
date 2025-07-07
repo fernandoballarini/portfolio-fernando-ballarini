@@ -12,11 +12,21 @@
       </div>
       -->
     <div class="button-bar">
-      <app-button (clicked)="onButtonClicked($event)" value="experience" label="Experience" icon="work" type="button"></app-button>
-      <app-button (clicked)="onButtonClicked($event)" value="skills" label="Skills" icon="build" type="button"></app-button>
-      <app-button (clicked)="onButtonClicked($event)" value="education" label="Education" icon="school" type="button"></app-button>
-      <app-button (clicked)="onButtonClicked($event)" value="language" label="Languages" icon="language" type="button"></app-button>
-      <app-button value="setting" label="" icon="settings" type="button"></app-button>
+      <app-button (clicked)="onButtonClicked($event)" value="experience" label="Experience" icon="work" type="button-bar"></app-button>
+      <app-button (clicked)="onButtonClicked($event)" value="skills" label="Skills" icon="build" type="button-bar"></app-button>
+      <app-button (clicked)="onButtonClicked($event)" value="education" label="Education" icon="school" type="button-bar"></app-button>
+      <app-button (clicked)="onButtonClicked($event)" value="language" label="Languages" icon="language" type="button-bar"></app-button>
+      <app-button value="setting" label="" icon="settings" type="button-bar"></app-button>
     </div>
+    <button class="hamburger" (click)="toggleMenu()">
+      &#9776; <!-- Unicode for hamburger icon -->
+    </button>
+  </div>
+  <div *ngIf="showMenu" class="mobile-menu">
+    <app-button (clicked)="onButtonClicked($event)" value="experience" label="Experience" icon="work" type="button-list"></app-button>
+    <app-button (clicked)="onButtonClicked($event)" value="skills" label="Skills" icon="build" type="button-list"></app-button>
+    <app-button (clicked)="onButtonClicked($event)" value="education" label="Education" icon="school" type="button-list"></app-button>
+    <app-button (clicked)="onButtonClicked($event)" value="language" label="Languages" icon="language" type="button-list"></app-button>
+    <app-button value="setting" label="" icon="settings" type="button-list"></app-button>
   </div>
 </header>

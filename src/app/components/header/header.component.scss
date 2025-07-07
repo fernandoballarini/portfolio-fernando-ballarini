@@ -1,4 +1,14 @@
 /* CSS conceptual para el header */
+@media (max-width: 600px) {
+  .header-container {
+    font-size: 1.1rem; /* or any smaller size */
+  }
+  .header-content h1,
+  .header-content h2 {
+    font-size: 1.3rem;
+  }
+}
+
 header {
   text-align: center;
   padding: 1.5rem 1.5rem;
@@ -50,13 +60,51 @@ header > div {
 
 .button-bar {
   display: flex;
-  align-items: center;    /* Vertically center children */
-  justify-content: space-evenly;
-  height: 100%;           /* Ensure it fills the header's height */
-  gap: 1rem;
+  gap: 8px;
 }
-/*
 
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  align-self: center;
+  flex: 0 0 auto;
+  color: #ecf0f1;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  background: #383838;
+  padding: 16px 0;
+  position: static; // Let it flow below header
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+  z-index: 100;
+}
+
+@media (max-width: 768px) {
+  .button-bar {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .mobile-menu {
+    display: flex;
+  }
+  .header-content {
+    padding: 0 0.5rem;
+  }
+  .header-content h1 {
+    font-size: 6vw; // Scales with viewport width
+  }
+}
+
+/*
 header .container {
   width: 65%;
   margin: 1rem auto;

@@ -1,10 +1,11 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../common/button/button.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, CommonModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
@@ -40,6 +41,11 @@ export class HeaderComponent {
       clearInterval(this.scrambleInterval);
       clearInterval(this.wordChangeInterval);
     }
+  }
+
+  showMenu = false;
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
   }
 
   onSectionClick(section: string) {

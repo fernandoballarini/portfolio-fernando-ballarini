@@ -21,3 +21,17 @@
   transform: translateY(-2px) scale(1.03);
   cursor: pointer;
 }
+
+.button-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
