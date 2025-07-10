@@ -6,7 +6,6 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { EducationComponent } from './components/education/education.component';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from './components/common/modal/modal.component';
-import { HeroAnimationComponent } from './components/common/hero-animation/hero-animation.component';
 import { version } from '../environments/version'; // Import the version
 
 @Component({
