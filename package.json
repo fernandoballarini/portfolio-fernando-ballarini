@@ -1,12 +1,12 @@
 {
   "name": "portfolio-fernando-ballarini",
-  "version": "1.1.0",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "version": "node scripts/set-version.js",
-    "start": "npm run version && ng serve",
-    "build": "npm run version && ng build",
-    "watch": "npm run version && ng build --watch --configuration development",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:portfolio-fernando-ballarini": "node dist/portfolio-fernando-ballarini/server/server.mjs",
     "release": "standard-version"
