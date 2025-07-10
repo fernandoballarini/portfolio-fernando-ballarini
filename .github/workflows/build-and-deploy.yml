@@ -39,6 +39,7 @@ jobs:
           # git add package.json # Or whatever file your script modifies
           # git commit -m "chore(release): increment version [skip ci]"
           # git push
+
         # --- END OF VERSION SCRIPT ---
 
       - name: Build Angular application
