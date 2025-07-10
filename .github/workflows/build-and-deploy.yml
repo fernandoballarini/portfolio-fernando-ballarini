@@ -25,33 +25,54 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Conditional Version Bump
-        # This whole step is like your "function call"
-        # It takes the commit message as implicit input.
-        # It's guarded by an 'if' condition.
-        if: | # Using | for multi-line if allows for OR logic if needed
-          contains(github.event.head_commit.message, '[bump patch]') ||
-          contains(github.event.head_commit.message, '[bump minor]') ||
-          contains(github.event.head_commit.message, '[bump major]')
+      - name: Increase Version Bump
+        id: version_bump_step # Add an ID to reference outputs if needed later
         run: |
-          echo "Processing version bump request..."
-          # This is where you determine the 'argument' for your script 'function'
-          INCREMENT_TYPE=""
-          if contains(github.event.head_commit.message, '[bump major]'); then
-            INCREMENT_TYPE="major"
-          elif contains(github.event.head_commit.message, '[bump minor]'); then
-            INCREMENT_TYPE="minor"
-          elif contains(github.event.head_commit.message, '[bump patch]'); then
-            INCREMENT_TYPE="patch"
-          else
-            echo "No recognized bump type found in commit message. Skipping version increment."
-            exit 0 # Exit successfully if no bump type
+          COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
+          echo "Commit message: '$COMMIT_MESSAGE'"
+
+          INCREMENT_TYPE="none" # Default to no bump
+
+          # Check for a BREAKING CHANGE first (highest precedence)
+          if echo "$COMMIT_MESSAGE" | grep -qE "(^feat!:|^fix!:|^BREAKING CHANGE:)"; then
+              INCREMENT_TYPE="major"
+          elif [[ "$COMMIT_MESSAGE" == "feat:"* ]]; then # Check for "feat:" at the beginning
+              INCREMENT_TYPE="minor"
+          elif [[ "$COMMIT_MESSAGE" == "fix:"* ]]; then # Check for "fix:" at the beginning
+              INCREMENT_TYPE="patch"
+          fi
+
+          if [ "$INCREMENT_TYPE" = "none" ]; then
+              echo "No semantic versioning keyword (feat:, fix:, BREAKING CHANGE:) found. Skipping version increment."
+              exit 0 # Exit successfully without changing version or pushing
           fi
 
           echo "Detected increment type: $INCREMENT_TYPE"
-          node scripts/set-version.js $INCREMENT_TYPE # <--- Calling your script with the argument
 
-          # ... (rest of git config, add, commit, push logic) ...
+          # Run your versioning script with the determined type
+          node scripts/set-version.js "$INCREMENT_TYPE"
+
+          echo "Configuring Git user..."
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          echo "Staging modified files..."
+          git add package.json
+          git add src/environments/version.ts
+
+          # Check if there are actual changes to commit
+          if ! git diff --cached --exit-code; then
+              echo "Changes detected, creating new version commit..."
+              # Get the new version from package.json for the commit message
+              NEW_VERSION=$(node -p "require('./package.json').version")
+              # Use [skip ci] to prevent this commit from triggering another workflow run
+              git commit -m "chore(release): auto-bump to ${NEW_VERSION} ($INCREMENT_TYPE) [skip ci]"
+
+              echo "Pushing new version commit to branch..."
+              git push
+          else
+              echo "No version changes were actually made by the script. Skipping commit and push."
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
