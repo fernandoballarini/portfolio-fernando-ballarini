@@ -42,7 +42,7 @@ jobs:
         # Check your `angular.json` or your `dist` folder after a local build to confirm the path.
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/portfolio-fernando-ballarini # <--- Make sure this path is correct for your Angular app
+          path: ./docs # <--- Make sure this path is correct for your Angular app
 
       - name: Deploy to GitHub Pages
         id: deployment
