@@ -5,7 +5,7 @@
   }
   .header-content h1,
   .header-content h2 {
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 5vw, 2.5rem);
   }
 }
 
@@ -42,7 +42,7 @@ header h2 {
 
 header > div {
   display: flex;
-  height: 100%;
+  height: auto;
 }
 
 .header-content,
@@ -95,6 +95,27 @@ header > div {
   }
   .mobile-menu {
     display: flex;
+     // Absolute positioning allows it to be placed relative to the header.
+    position: absolute;
+    top: 100%; // Position it right below the header.
+    right: 0; // Align it to the right edge of the header.
+
+    // Use fit-content to make the width adapt to its content.
+    // 'auto' would also work, but 'fit-content' is more explicit.
+    width: fit-content;
+    white-space: nowrap; // Prevent labels from wrapping which could make the menu wider.
+
+    // Styling for the dropdown appearance
+    background-color: var(--background-color, #2c2c2c); // Use a variable or a fallback color
+    border: 1px solid var(--border-color, #444);
+    border-radius: 8px;
+    border-top: none; // Remove top border to merge with header
+    padding: 1rem;
+    margin-top: 0.5rem; // Add a small gap between the header and the menu
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; // Ensure it appears above other content.
+    flex-direction: column;
+    gap: 0.5rem; // Add some space between the buttons.
   }
   .header-content {
     padding: 0 0.5rem;

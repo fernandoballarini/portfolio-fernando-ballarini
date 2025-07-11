@@ -29,3 +29,10 @@
   font-size: 2rem;
   cursor: pointer;
 }
+
+@media (max-width: 1200px) {
+  .modal {
+    min-width: 90%;
+    min-height: 90%;
+  }
+}

@@ -54,7 +54,8 @@ export class HeaderComponent {
   }
 
   onButtonClicked(section: string) {
-    console.log(`Section clicked: ${section}`);
+    console.log(`Button clicked: ${section}`);
+    this.toggleMenu();
     this.sectionChange.emit(section);
   }
 
