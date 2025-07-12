@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../common/button/button.component';
 
@@ -21,6 +21,7 @@ export class HeaderComponent {
   private chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
   private scrambleInterval: any;
   private wordChangeInterval: any;
+  readonly MAX_SCREEN_WIDTH_THRESHOLD = 1200; // You can adjust this value
 
   ngOnInit() {
     this.displayedText = this.words[0]; // Show first word for SSR
@@ -46,6 +47,14 @@ export class HeaderComponent {
   showMenu = false;
   toggleMenu() {
     this.showMenu = !this.showMenu;
+  }
+
+  // Listen for window resize events
+  // This method will be called every time the browser window is resized
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    console.log(`Resized to: ${window.innerWidth}px. Feature disabled: ${this.showMenu}`);
+    this.showMenu = window.innerWidth < this.MAX_SCREEN_WIDTH_THRESHOLD && this.showMenu; // Hide the menu on resize
   }
 
   onSectionClick(section: string) {
