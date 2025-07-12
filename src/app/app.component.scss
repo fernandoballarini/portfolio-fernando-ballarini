@@ -31,11 +31,11 @@
 }
 
 .about-photo {
-  flex: 0 0 150px; /* Fixed width for the photo */
-  height: 150px; /* Fixed height for the photo */
+  flex: none; /* Fixed width for the photo */
   width: 150px;
   border-radius: 50%; /* Circular photo */
   overflow: hidden; /* Ensure the image fits within the circle */
+  aspect-ratio: 1;
 }
 
 @media screen and (max-width: 1200px) {
@@ -45,8 +45,7 @@
     padding: 1rem;
   }
   .about-photo {
-    flex: 0 0 10%;
-    height: 50%;
     width: 50%;
+    max-width: 150px;
   }
 }
