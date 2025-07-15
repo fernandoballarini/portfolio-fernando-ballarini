@@ -42,7 +42,7 @@ export class ExperienceComponent {
       jobTitle: 'BI Developer / Software Engineer',
       company: 'Ministerio Público Fiscal',
       dates: '2018-2022',
-      technologies: ['Angular', 'Python', 'PostgreSQL', 'Pentaho'],
+      technologies: ['Angular', 'Python', 'PostgresSQL', 'Pentaho'],
       responsibilities: [
         'Designed and developed BI solutions using Pentaho, PostgreSQL, and Python.',
         'Created interactive dashboards that improved investigative workflows.',

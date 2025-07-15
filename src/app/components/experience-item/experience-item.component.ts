@@ -16,17 +16,23 @@ export class ExperienceItemComponent {
   @Input() responsibilities!: string[];
 
   private technologyImageMap: { [key: string]: string } = {
-    //angular: 'assets/icons/angular.svg',
+    'angular': 'assets/icons/angular.png',
     '.net': 'assets/icons/dotnet.png',
-    //'c#': 'assets/icons/csharp.svg',
-    //'sql server': 'assets/icons/sql-server.svg',
-    azure: 'assets/icons/azure.png',
-    //typescript: 'assets/icons/typescript.svg',
-    //javascript: 'assets/icons/javascript.svg',
-    //html: 'assets/icons/html.svg',
-    //css: 'assets/icons/css.svg',
-    //sass: 'assets/icons/sass.svg',
-    //git: 'assets/icons/git.svg',
+    'sql server': 'assets/icons/sqlserver.png',
+    'cicd': 'assets/icons/cicd.png',
+    'kubernetes': 'assets/icons/kubernetes.png',
+    'docker': 'assets/icons/docker.png',
+    'rabbitmq': 'assets/icons/rabbitmq.png',
+    'kafka': 'assets/icons/kafka.png',
+    'agile': 'assets/icons/agile.png',
+    'pentaho': 'assets/icons/pentaho.png',
+    'python': 'assets/icons/python.png',
+    'postgressql': 'assets/icons/postgressql.png',
+    'azure': 'assets/icons/azure.png',
+    'typescript': 'assets/icons/typescript.png',
+    'html': 'assets/icons/html.png',
+    'git': 'assets/icons/git.png',
+    'aws': 'assets/icons/aws.png',
   };
 
   getTechnologyImage(tech: string): string | null {

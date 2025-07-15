@@ -11,8 +11,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(300px, 90vw, 800px); // Responsive width: min, preferred, max
-  max-height: 80vh;
+  width: min(90vw, 1200px); // Be 90% of viewport width, but no wider than 800px
+  max-height: 80vh; // Limit height to 80% of viewport height
   z-index: 1001;
 
   // --- Flexbox Layout for Header/Content/Footer ---

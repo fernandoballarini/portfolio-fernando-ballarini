@@ -33,7 +33,7 @@ h3.section-title {
 .job-dates {
   font-size: 0.95em;
   color: #4b96f8; /* Gris más claro */
-  white-space: nowrap; /* Para que las fechas no se rompan */
+  //white-space: nowrap; /* Para que las fechas no se rompan */
 }
 .technologies {
   margin-top: 5px;
@@ -44,7 +44,7 @@ h3.section-title {
 }
 /* Para tags/badges de tecnologías */
 .tech-tag {
-  display: inline-block;
+  display: inline-flex;
   background-color: #015b74; /* Fondo suave */
   color: #b9dbf1; /* Color de texto azul */
   padding: 3px 8px;
