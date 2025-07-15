@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../common/button/button.component';
+import { Console } from 'console';
 
 @Component({
   selector: 'app-header',
@@ -46,7 +47,10 @@ export class HeaderComponent {
 
   showMenu = false;
   toggleMenu() {
-    this.showMenu = !this.showMenu;
+    console.log(`Menu toggled: ${this.showMenu}`);
+    if (window.innerWidth < this.MAX_SCREEN_WIDTH_THRESHOLD){
+      this.showMenu = !this.showMenu;
+    }
   }
 
   // Listen for window resize events
