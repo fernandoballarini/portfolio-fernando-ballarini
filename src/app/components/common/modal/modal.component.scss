@@ -1,38 +1,82 @@
 .modal-backdrop {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.7);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7); // A common backdrop color
   z-index: 1000;
 }
+
 .modal {
+  // --- Core Positioning & Sizing ---
   position: fixed;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(128, 128, 128, 0.7); /* Grey with 70% opacity */
-  color: #fff;
-  padding: 0rem;
-  border-radius: 15px;                  /* More pronounced rounded corners */
-  z-index: 1001;
-  min-width: 300px;
-  min-height: 200px;
+  width: clamp(300px, 90vw, 800px); // Responsive width: min, preferred, max
   max-height: 80vh;
-  overflow-y: auto;
-  box-sizing: border-box;
+  z-index: 1001;
+
+  // --- Flexbox Layout for Header/Content/Footer ---
+  display: flex;
+  flex-direction: column;
+
+  // --- Appearance ---
+  background: rgba(44, 62, 80, 0.9); // Using a color from your header for consistency
+  backdrop-filter: blur(5px); // Nice glassy effect
+  color: #ecf0f1;
+  border-radius: 15px; // The rounded corners
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  // --- Crucial for keeping rounded corners ---
+  overflow: hidden;
+  padding: 0; // Padding will be handled by inner elements
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between; // Pushes content (close button) to the right
+  align-items: center;
+  padding: 0.75rem 1rem;
+  flex-shrink: 0; // Prevents the header from shrinking
+  border-bottom: 1px solid rgba(236, 240, 241, 0.2); // Subtle separator
+}
+
+.modal-title{
+  color: white;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ecf0f1;;
 }
 
 .close-btn {
-  position: absolute;
-  top: 1rem; right: 1rem;
+  // Resetting button styles
   background: none;
   border: none;
-  color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-}
 
-@media (max-width: 1200px) {
-  .modal {
-    min-width: 90%;
-    min-height: 90%;
+  // Appearance
+  color: #ecf0f1;
+  font-size: 1.75rem;
+  font-weight: bold;
+  line-height: 1; // Prevents extra vertical space
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  padding: 0.25rem;
+
+  &:hover {
+    color: #e74c3c; // A highlight color on hover
   }
 }
+
+.modal-content {
+  flex-grow: 1; // Allows this section to grow and fill available space
+  overflow-y: auto; // The magic! Only this part will scroll
+  padding: 1rem; // Space for the content inside
+}
+
+.modal-footer {
+  flex-shrink: 0; // Prevents the footer from shrinking
+  padding: 1rem;
+  border-top: 1px solid rgba(236, 240, 241, 0.2); // Subtle separator
+}
+

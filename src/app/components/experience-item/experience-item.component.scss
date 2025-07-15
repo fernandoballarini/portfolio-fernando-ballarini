@@ -53,6 +53,17 @@ h3.section-title {
   margin-right: 5px;
   margin-bottom: 5px;
 }
+
+.tech-icon {
+  display: inline-block;
+  padding: 3px 3px;
+  vertical-align: middle; /* Alinear verticalmente con el texto */
+  height: 1.75em; // Size the icon relative to the parent's font size
+  width: auto;   // Maintain aspect ratio
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
 .responsibilities ul {
   list-style: disc; /* El estilo por defecto */
   margin-left: 20px;

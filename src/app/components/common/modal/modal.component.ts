@@ -23,6 +23,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
 export class ModalComponent {
   @Input() show = false;
   @Output() close = new EventEmitter<void>();
+  @Input() headerTitle: string = 'Modal Header';
 
   onClose() {
     this.close.emit();

@@ -12,16 +12,16 @@
   </div>
 </section>
 
-<app-modal [show]="showExperienceModal" (close)="showExperienceModal = false">
+<app-modal [show]="showExperienceModal" (close)="showExperienceModal = false" headerTitle="Professional Experience">
   <app-experience></app-experience>
 </app-modal>
-<app-modal [show]="showSkillsModal" (close)="showSkillsModal = false">
+<app-modal [show]="showSkillsModal" (close)="showSkillsModal = false" headerTitle="Skills">
   <app-skills></app-skills>
 </app-modal>
-<app-modal [show]="showEducationModal" (close)="showEducationModal = false">
+<app-modal [show]="showEducationModal" (close)="showEducationModal = false" headerTitle="Education">
   <app-education></app-education>
 </app-modal>
-<app-modal [show]="showLanguagesModal" (close)="showLanguagesModal = false">
+<app-modal [show]="showLanguagesModal" (close)="showLanguagesModal = false" headerTitle="Languages">
   <h2>Languages</h2>
   <p>Details about your languages go here...</p>
 </app-modal>

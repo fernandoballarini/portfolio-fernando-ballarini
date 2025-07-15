@@ -4,7 +4,15 @@
     <span class="job-dates">({{ dates }})</span>
   </div>
   <div class="technologies">
-    <span *ngFor="let tech of technologies" class="tech-tag">{{ tech }}</span>
+    <ng-container *ngFor="let tech of technologies; let isLast = last">
+      <ng-container *ngIf="getTechnologyImage(tech) as imageUrl; else techText">
+        <img [src]="imageUrl" [alt]="tech + ' logo'" class="tech-icon" [title]="tech" />
+      </ng-container>
+
+      <ng-template #techText>
+        <span class="tech-tag">{{ tech }}</span>
+      </ng-template>
+    </ng-container>
   </div>
   <ul class="responsibilities">
     <li *ngFor="let responsibility of responsibilities">{{ responsibility }}</li>

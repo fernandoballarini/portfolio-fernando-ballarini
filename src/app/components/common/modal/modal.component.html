@@ -1,5 +1,19 @@
+<!-- The backdrop is now a sibling to the modal, not a child of a stray header -->
 <div class="modal-backdrop" *ngIf="show" @fadeInOut (click)="onClose()"></div>
+
+<!-- The main modal container -->
 <div class="modal" *ngIf="show" @fadeInOut>
-  <button class="close-btn" (click)="onClose()">×</button>
-  <ng-content></ng-content>
+  <!-- 1. The Modal Header -->
+  <div class="modal-header">
+    <h2 class="modal-title">{{ headerTitle }}</h2>
+    <button class="close-btn" (click)="onClose()">×</button>
+  </div>
+
+  <!-- 2. The Modal Content (scrollable area) -->
+  <div class="modal-content">
+    <ng-content></ng-content>
+  </div>
+
+  <!-- 3. The Modal Footer (for action buttons) -->
+  <div class="modal-footer"></div>
 </div>
