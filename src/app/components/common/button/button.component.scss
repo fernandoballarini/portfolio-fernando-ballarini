@@ -1,7 +1,5 @@
 .button-like-div {
   border: 2px solid transparent;
-  width: 100%;
-  height: 100%;
   border-radius: 15px;
   transition: border-color 0.3s, box-shadow 0.3s;
   display: flex;
@@ -12,10 +10,14 @@
 }
 
 .button-bar {
+  padding: 7px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px;
+}
+
+.button-bar > .material-icons {
+  font-size: 36px;
 }
 
 .button-like-div:hover {
@@ -32,4 +34,8 @@
   gap: 1rem;
   width: 12rem;
   height: 2rem;
+}
+
+.button-list > .material-icons {
+  font-size: 24px;
 }

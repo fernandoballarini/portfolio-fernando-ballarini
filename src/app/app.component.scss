@@ -12,6 +12,7 @@
 }
 
 .about-text h1 {
+  font-family: 'lato', sans-serif;
   color: #00f0ff; /* Accent color for headings */
 }
 
@@ -32,8 +33,8 @@
 
 .about-photo {
   flex: none; /* Fixed width for the photo */
-  width: 150px;
-  border-radius: 50%; /* Circular photo */
+  width: 20rem;
+  border-radius: 7%; /* Circular photo */
   overflow: hidden; /* Ensure the image fits within the circle */
   aspect-ratio: 1;
 }
