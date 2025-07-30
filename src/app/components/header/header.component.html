@@ -14,11 +14,11 @@
       &#9776; <!-- Unicode for hamburger icon -->
     </button>
   </div>
-  <div *ngIf="showMenu" class="mobile-menu">
-    <app-button (clicked)="onButtonClicked($event)" value="experience" label="Experience" icon="work" type="button-list"></app-button>
-    <app-button (clicked)="onButtonClicked($event)" value="skills" label="Skills" icon="build" type="button-list"></app-button>
-    <app-button (clicked)="onButtonClicked($event)" value="education" label="Education" icon="school" type="button-list"></app-button>
-    <app-button (clicked)="onButtonClicked($event)" value="language" label="Languages" icon="language" type="button-list"></app-button>
-    <app-button value="setting" label="Configuration" icon="settings" type="button-list"></app-button>
-  </div>
 </header>
+<div *ngIf="showMenu" class="mobile-menu">
+  <app-button (clicked)="onButtonClicked($event)" value="experience" label="Experience" icon="work" type="button-list"></app-button>
+  <app-button (clicked)="onButtonClicked($event)" value="skills" label="Skills" icon="build" type="button-list"></app-button>
+  <app-button (clicked)="onButtonClicked($event)" value="education" label="Education" icon="school" type="button-list"></app-button>
+  <app-button (clicked)="onButtonClicked($event)" value="language" label="Languages" icon="language" type="button-list"></app-button>
+  <app-button value="setting" label="Configuration" icon="settings" type="button-list"></app-button>
+</div>
