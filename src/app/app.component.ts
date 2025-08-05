@@ -7,6 +7,7 @@ import { EducationComponent } from './components/education/education.component';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from './components/common/modal/modal.component';
 import { version } from '../environments/version'; // Import the version
+import { LanguagesComponent } from './components/languages/languages.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { version } from '../environments/version'; // Import the version
     ExperienceComponent,
     SkillsComponent,
     EducationComponent,
+    LanguagesComponent,
     CommonModule,
     ModalComponent,
   ],
@@ -44,7 +46,7 @@ export class AppComponent {
       case 'education':
         this.showEducationModal = true;
         break;
-      case 'languages':
+      case 'language':
         this.showLanguagesModal = true;
         break;
     }

@@ -20,7 +20,10 @@
   flex-direction: column;
 
   // --- Appearance ---
-  background-color: #313131;
+  //background-color: #313131;  
+  background-color: #18191d;  
+  background-image: linear-gradient(to top right, #212121 35%, #2c3661 100%);
+
   backdrop-filter: blur(5px); // Nice glassy effect
   color: #ecf0f1;
   border-radius: 15px; // The rounded corners

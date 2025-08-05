@@ -1,0 +1,40 @@
+.languages-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.language-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+}
+
+.flag-img {
+  width: 20px; /* Tamaño de la imagen */
+  height: auto;
+  border-radius: 2px; /* Opcional: para esquinas ligeramente redondeadas */
+  box-shadow: 0 0 3px rgba(0,0,0,0.2); /* Opcional: para una sombra sutil */
+}
+
+.language-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.language-level {
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+  color: white;
+}
+
+/* Colores para los niveles */
+.native { background-color: #28a745; }
+.advanced { background-color: #007bff; }
+.intermediate { background-color: #ffc107; }
+.basic { background-color: #6c757d; }
