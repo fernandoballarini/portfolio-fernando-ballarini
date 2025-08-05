@@ -1,56 +1,57 @@
 <app-header (sectionChange)="onSectionChange($event)"></app-header>
-
-<section class="about-me first">
-  <img src="assets/profile_background_picture.png" alt="Your Name" class="about-photo" />
-  <div class="about-text">
-    <h1>Hi, I'm Fernando Ballarini</h1>
-    <p>
-      I'm a Software Engineer with over a decade of experience in backend development, but what truly drives me is my passion for technology. I love the feeling of building something from scratch and seeing how my solutions not only work, but also make life easier for others.
+<div class="app-content">
+  <section class="about-me first">
+    <img src="assets/profile_background_picture.png" alt="Your Name" class="about-photo" />
+    <div class="about-text">
+      <h1>Hi, I'm Fernando Ballarini</h1>
       <p>
-      I consider myself an architect of scalable and efficient systems, and I enjoy every challenge that allows me to use tools like C++, C#, Java, Python, Azure, CI/CD, microservices, Docker, and Kubernetes. My greatest satisfaction is seeing the code I write turn into an incredible user experience.            
-    </p>
-  </div>
-</section>
+        I'm a Software Engineer with over a decade of experience in backend development, but what truly drives me is my passion for technology. I love the feeling of building something from scratch and seeing how my solutions not only work, but also make life easier for others.
+        <p>
+        I consider myself an architect of scalable and efficient systems, and I enjoy every challenge that allows me to use tools like C++, C#, Java, Python, Azure, CI/CD, microservices, Docker, and Kubernetes. My greatest satisfaction is seeing the code I write turn into an incredible user experience.            
+      </p>
+    </div>
+  </section>
 
-<section class="about-me second">
-  <div class="about-text">
-    <p>
-      In parallel with my engineering work, I’ve worked as a Business Intelligence developer, designing pipelines, creating KPIs, and building dashboards that inform strategic decisions. I'm fascinated by how data can tell a story, and I enjoy merging my developer's mindset with a comprehensive business perspective to ensure every solution has a tangible impact. My goal is to create user experiences that are smart on the inside and intuitive on the outside.
-    </p>
-  </div>
-  <img src="assets/data_analysis.png" alt="Your Name" class="about-photo" />
-</section>
+  <section class="about-me second">
+    <div class="about-text">
+      <p>
+        In parallel with my engineering work, I’ve worked as a Business Intelligence developer, designing pipelines, creating KPIs, and building dashboards that inform strategic decisions. I'm fascinated by how data can tell a story, and I enjoy merging my developer's mindset with a comprehensive business perspective to ensure every solution has a tangible impact. My goal is to create user experiences that are smart on the inside and intuitive on the outside.
+      </p>
+    </div>
+    <img src="assets/data_analysis.png" alt="Your Name" class="about-photo" />
+  </section>
 
-<section class="about-me third">
-  <img src="assets/full-stack-picture.png" alt="Your Name" class="about-photo" />
-  <div class="about-text">
-    <p>
-     While my core strength is backend and infrastructure, I bring a full-stack perspective through
-     hands-on experience with Angular and Vue.js. I’ve partnered closely with UX and product
-     teams to create data-rich dashboards and intuitive tools, always striving to understand not
-     just what we’re building, but why. That mindset has allowed me to influence everything from
-     architecture and process improvements to the user experience.
-    </p>
-  </div>
-</section>
+  <section class="about-me third">
+    <img src="assets/full-stack-picture.png" alt="Your Name" class="about-photo" />
+    <div class="about-text">
+      <p>
+      While my core strength is backend and infrastructure, I bring a full-stack perspective through
+      hands-on experience with Angular and Vue.js. I’ve partnered closely with UX and product
+      teams to create data-rich dashboards and intuitive tools, always striving to understand not
+      just what we’re building, but why. That mindset has allowed me to influence everything from
+      architecture and process improvements to the user experience.
+      </p>
+    </div>
+  </section>
 
-<app-modal [show]="showExperienceModal" (close)="showExperienceModal = false" headerTitle="Professional Experience">
-  <app-experience></app-experience>
-</app-modal>
-<app-modal [show]="showSkillsModal" (close)="showSkillsModal = false" headerTitle="Skills">
-  <app-skills></app-skills>
-</app-modal>
-<app-modal [show]="showEducationModal" (close)="showEducationModal = false" headerTitle="Education">
-  <app-education></app-education>
-</app-modal>
-<app-modal [show]="showLanguagesModal" (close)="showLanguagesModal = false" headerTitle="Languages">
-  <h2>Languages</h2>
-  <p>Details about your languages go here...</p>
-</app-modal>
+  <app-modal [show]="showExperienceModal" (close)="showExperienceModal = false" headerTitle="Professional Experience">
+    <app-experience></app-experience>
+  </app-modal>
+  <app-modal [show]="showSkillsModal" (close)="showSkillsModal = false" headerTitle="Skills">
+    <app-skills></app-skills>
+  </app-modal>
+  <app-modal [show]="showEducationModal" (close)="showEducationModal = false" headerTitle="Education">
+    <app-education></app-education>
+  </app-modal>
+  <app-modal [show]="showLanguagesModal" (close)="showLanguagesModal = false" headerTitle="Languages">
+    <h2>Languages</h2>
+    <p>Details about your languages go here...</p>
+  </app-modal>
 
-<section class="footer" style="align-content: center; justify-content: center; display: flex; flex-direction: row;">
-  version {{ appVersion }}
-</section>
+  <section class="footer" style="align-content: center; justify-content: center; display: flex; flex-direction: row;">
+    version {{ appVersion }}
+  </section>
+</div>
 <router-outlet />
 
 

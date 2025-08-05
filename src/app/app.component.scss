@@ -1,10 +1,14 @@
 /*Added*/
-.header-section {
+/* .header-section {
   position: absolute;
   width: 100%;
   z-index: 999;
   padding-top: 15px;
   padding-bottom: 15px;
+} */
+
+.app-content {
+  padding-top: 5rem;
 }
 
 .about-me {
@@ -22,7 +26,7 @@
 }
 
 .about-me {
-  background: rgba(34, 34, 34, 0.85); /* Dark, slightly transparent */
+  background: rgba(34, 34, 34, 0.25); /* Dark, slightly transparent */
   border-radius: 18px;
   padding: 2rem;
   margin: 2rem 2rem;
