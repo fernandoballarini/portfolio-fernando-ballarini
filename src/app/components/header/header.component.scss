@@ -133,7 +133,8 @@ header > div {
     width: fit-content;
     white-space: nowrap; // Prevent labels from wrapping which could make the menu wider.
     // Styling for the dropdown appearance
-    background-color: var(--background-color, #2c2c2c); // Use a variable or a fallback color
+    background-color: #18191d;  
+    background-image: linear-gradient(to top right, #212121 0%, #2c3661 100%);
     border: 1px solid var(--border-color, #444);
     border-radius: 8px;
     border-top: none; // Remove top border to merge with header
